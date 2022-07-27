@@ -1,4 +1,8 @@
-import React from "react";
+/*
+    this is a login page
+*/
+
+import React, { useReducer } from "react";
 
 import AppLogo from "../../shared/components/AppLogo";
 import FormCard from "../../shared/components/FormCard";
@@ -6,13 +10,28 @@ import ImageArea from "../../shared/components/ImageArea";
 import Button from "../../shared/Form/Components/Button";
 import Input from "../../shared/Form/Components/Input";
 
-/*
-    this is a login page
-*/
-
 import LogImg from "../../shared/images/Employee.png";
 
+const formReduser = (state, action) => {
+
+}
+
 const Login = () => {
+
+    useReducer(formReduser, {
+        input: {
+            email: {
+                value: "",
+                isValid: false
+            },
+            password: {
+                value: "",
+                isValid: false
+            }
+        },
+        isValid: false
+    });
+
     return (
         // login page wrapper
         <div className="text-center w-full">
