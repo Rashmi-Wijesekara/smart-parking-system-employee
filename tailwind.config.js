@@ -8,6 +8,8 @@ module.exports = {
 				'cornflower-blue': '#696CFF',
 				'dusty-gray': '#999999',
 				'dove-gray': '#666666',
+				'navy-blue': '#1E0094',
+				'mine-shaft': '#3F3F3F',
 			},
 			height: {
 				'abc': '600px',

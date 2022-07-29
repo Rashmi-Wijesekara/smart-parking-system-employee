@@ -11,7 +11,7 @@ import ContentRapper from "./ContentRapper";
 const PageWrapper = (props) => {
     return (
         <div className="w-full h-full relative flex justify-center">
-            <ContentRapper>
+            <ContentRapper wrapperClasses={props.wrapperClasses}>
                 {props.children}
                 <AppLogo className="absolute bottom-2 right-1" height="h-6" />
             </ContentRapper>
