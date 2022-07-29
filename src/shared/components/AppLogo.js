@@ -9,7 +9,11 @@ import logo from "../images/megaMediaLogo.svg";
 const AppLogo = props => {
     return (
         <div className={`${props.className} z-10`}>
-            <img src={logo} alt="mega media logo" className={props.imgClass || "h-7"}/>
+            <img 
+                src={logo} 
+                alt="mega media logo" 
+                className={`${props.imgClass} ${props.height || "h-7"} `} 
+            />
         </div>
     );
 };

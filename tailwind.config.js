@@ -36,6 +36,7 @@ module.exports = {
 		},
 		fontSize: {
 			'ssx': '10px',
+			'sxm': '15px',
 		},
 	},
 	plugins: [],
