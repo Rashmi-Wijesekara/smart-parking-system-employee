@@ -40,8 +40,8 @@ const Login = () => {
             </div>
             <div>
                 <ImageArea src={LogImg} alt="Login Images" className="h-40 mx-auto" />
-                <h2 className="text-xl font-semibold mb-1 mt-5">Employee Login</h2>
-                <h4 className="font-semibold mb-4">Smart Parking System</h4>
+                <h2 className="text-xl font-semibold mb-1 mt-5 font-main">Employee Login</h2>
+                <h4 className="font-semibold mb-4 font-main">Smart Parking System</h4>
                 <FormCard>
                     <form>
                         <Input
@@ -54,7 +54,7 @@ const Login = () => {
                             type="password" 
                             displayName="Password"
                         />
-                        <p className="text-right text-dusty-gray text-xs mb-1">forgot password?</p>
+                        <p className="text-right text-dusty-gray text-xs mb-1 font-second">forgot password?</p>
                         <Button 
                             type="submit"
                             title="Login"
