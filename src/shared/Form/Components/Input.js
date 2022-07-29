@@ -11,7 +11,7 @@ const Input = props => {
         <div className={`text-left ${props.className || "mb-2"}`}>
             <label 
                 htmlFor={props.id}
-                className={`${props.labelColor || "text-dove-gray"} text-sm leading-8`}
+                className={`${props.labelColor || "text-dove-gray"} text-xs leading-8 font-second`}
             >
                 {props.displayName}
             </label>
@@ -19,7 +19,7 @@ const Input = props => {
             <input 
                 id={props.id} 
                 type={props.type} 
-                className={`w-full ${props.color || "bg-neutral-100"} rounded-xl h-7 px-2`}
+                className={`w-full ${props.color || "bg-neutral-100"} rounded-xl h-7 px-2 py-3 font-second`}
             />
         </div>
     );
