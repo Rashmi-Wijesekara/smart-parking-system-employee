@@ -6,6 +6,7 @@ import MyProfile from './CoreUI/pages/MyProfile';
 import PersionalInfo from './CoreUI/pages/PersionalInfo';
 import Logout from './CoreUI/pages/Logout';
 import PasswordReset1 from './CoreUI/pages/PasswordReset1';
+import PasswordReset2 from './CoreUI/pages/PasswordReset2';
 
 import './App.css';
 
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/pwdReset1" exact>
             <PasswordReset1 />
+          </Route>
+          <Route path="/pwdReset2" exact>
+            <PasswordReset2 />
           </Route>
           <Redirect to="/" />
         </Switch>
