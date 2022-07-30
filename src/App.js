@@ -4,6 +4,7 @@ import Login from './login/pages/Login';
 import Dashboard from './CoreUI/pages/Dashboard';
 import MyProfile from './CoreUI/pages/MyProfile';
 import PersionalInfo from './CoreUI/pages/PersionalInfo';
+import Logout from './CoreUI/pages/Logout';
 
 import './App.css';
 
@@ -23,6 +24,9 @@ function App() {
           </Route>
           <Route path="/profileInfo" exact>
             <PersionalInfo />
+          </Route>
+          <Route path="/logout" exact>
+            <Logout />
           </Route>
           <Redirect to="/" />
         </Switch>
