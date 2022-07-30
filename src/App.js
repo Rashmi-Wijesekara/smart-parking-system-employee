@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Login from './login/pages/Login';
 import Dashboard from './CoreUI/pages/Dashboard';
 import MyProfile from './CoreUI/pages/MyProfile';
+import PersionalInfo from './CoreUI/pages/PersionalInfo';
 
 import './App.css';
 
@@ -17,9 +18,12 @@ function App() {
           <Route path="/dashboard" exact>
             <Dashboard />
           </Route>
-          <Router path="/profile" exact>
+          <Route path="/profile" exact>
             <MyProfile />
-          </Router>
+          </Route>
+          <Route path="/profileInfo" exact>
+            <PersionalInfo />
+          </Route>
           <Redirect to="/" />
         </Switch>
       </Router>
