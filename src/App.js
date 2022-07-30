@@ -5,6 +5,7 @@ import Dashboard from './CoreUI/pages/Dashboard';
 import MyProfile from './CoreUI/pages/MyProfile';
 import PersionalInfo from './CoreUI/pages/PersionalInfo';
 import Logout from './CoreUI/pages/Logout';
+import PasswordReset1 from './CoreUI/pages/PasswordReset1';
 
 import './App.css';
 
@@ -27,6 +28,9 @@ function App() {
           </Route>
           <Route path="/logout" exact>
             <Logout />
+          </Route>
+          <Route path="/pwdReset1" exact>
+            <PasswordReset1 />
           </Route>
           <Redirect to="/" />
         </Switch>

@@ -11,6 +11,7 @@ const PersionalInfo = (props) => {
     return (
         <PageWrapper
             wrapperClasses="flex flex-col pt-8"
+            selected="p"
         >   
             <div className="w-full flex flex-col items-center mb-3">
                 <Avatar 
