@@ -48,16 +48,19 @@ const Login = () => {
                             id="email"
                             type="email" 
                             displayName="Email address"
+                            inputClass="rounded-lg"
                         />
                         <Input
                             id="password"
                             type="password" 
                             displayName="Password"
+                            inputClass="rounded-lg"
                         />
-                        <p className="text-right text-dusty-gray text-xs mb-1 font-second">forgot password?</p>
+                        <p className="text-right text-dusty-gray text-xs mb-1 font-second text-ssx">forgot password?</p>
                         <Button 
                             type="submit"
                             title="Login"
+                            className="rounded-lg"
                         />
                     </form>
                 </FormCard>

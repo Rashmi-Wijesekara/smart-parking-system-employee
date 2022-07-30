@@ -7,7 +7,7 @@ import React from "react";
 
 const FormCard = props => {
     return (
-        <div className={`p-4 bg-white rounded-xl max-w-sm mx-auto ${props.className}`}>
+        <div className={`p-4 bg-white rounded-xl max-w-sm mx-auto shadow-wrapper ${props.className}`}>
             {props.children}
         </div>
     );
