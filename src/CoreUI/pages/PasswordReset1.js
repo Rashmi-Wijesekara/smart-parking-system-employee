@@ -26,6 +26,7 @@ const PasswordReset1 = () => {
                         inputClass="rounded-lg"
                     />
                     <Button 
+                        to="/pwdReset2"
                         type="submit"
                         title="Enter"
                         className="mt-6 rounded-lg"

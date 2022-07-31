@@ -32,9 +32,10 @@ const PasswordReset2 = () => {
                             <input type="number" className="bg-alto rounded-lg" min="0" max="9" />
                         </div>
                         <Button 
+                            to="/pwdReset3"
                             type="submit"
                             title="Verify"
-                            className="mt-6 rounded-lg mx-2"
+                            className="mt-6 rounded-lg mx-2 text-center" 
                         />
                     </div>
                 </form>
