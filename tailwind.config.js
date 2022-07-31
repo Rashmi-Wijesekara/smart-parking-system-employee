@@ -11,6 +11,8 @@ module.exports = {
 				'navy-blue': '#1E0094',
 				'mine-shaft': '#3F3F3F',
 				'apricot': '#EB9481',
+				'cosmos': '#ffd1d1',
+				'pgray': '#ccc',
 			},
 			height: {
 				'abc': '600px',
