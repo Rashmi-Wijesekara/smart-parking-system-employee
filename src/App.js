@@ -3,6 +3,11 @@ import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-d
 import Login from './login/pages/Login';
 import Dashboard from './CoreUI/pages/Dashboard';
 import MyProfile from './CoreUI/pages/MyProfile';
+import PersionalInfo from './CoreUI/pages/PersionalInfo';
+import Logout from './CoreUI/pages/Logout';
+import PasswordReset1 from './CoreUI/pages/PasswordReset1';
+import PasswordReset2 from './CoreUI/pages/PasswordReset2';
+import PasswordReset3 from './CoreUI/pages/PasswordReset3';
 
 import './App.css';
 
@@ -17,9 +22,24 @@ function App() {
           <Route path="/dashboard" exact>
             <Dashboard />
           </Route>
-          <Router path="/profile" exact>
+          <Route path="/profile" exact>
             <MyProfile />
-          </Router>
+          </Route>
+          <Route path="/profileInfo" exact>
+            <PersionalInfo />
+          </Route>
+          <Route path="/logout" exact>
+            <Logout />
+          </Route>
+          <Route path="/pwdReset1" exact>
+            <PasswordReset1 />
+          </Route>
+          <Route path="/pwdReset2" exact>
+            <PasswordReset2 />
+          </Route>
+          <Route path="/pwdReset3" exact>
+            <PasswordReset3 />
+          </Route>
           <Redirect to="/" />
         </Switch>
       </Router>

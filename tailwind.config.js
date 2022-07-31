@@ -10,6 +10,7 @@ module.exports = {
 				'dove-gray': '#666666',
 				'navy-blue': '#1E0094',
 				'mine-shaft': '#3F3F3F',
+				'apricot': '#EB9481',
 			},
 			height: {
 				'abc': '600px',
@@ -24,6 +25,7 @@ module.exports = {
 			spacing: {
 				'full-nav': 'calc(100% - 70px)',
 				'full-con': 'calc(100% - 10px)',
+				'full-img': 'calc(100% - 80px)',
 			},
 		},
 		fontFamily: {

@@ -18,7 +18,11 @@ const MyProfile = (props) => {
             wrapperClasses="flex flex-col pt-8 pl-8"
         >
             <div className="flex mb-8">
-                <Avatar alt={props.personName} src={props.profileUrl || DefaultProfileImg} sx={{ width: 70, height: 70 }}/>
+                <Avatar 
+                    alt={props.personName} 
+                    src={props.profileUrl || DefaultProfileImg} 
+                    sx={{ width: 70, height: 70 }}
+                />
                 <div className="text-left ml-3 flex flex-col justify-center">
                     <div className="font-bold font-main">{name}</div>
                     <div className="font-main">{email}</div>
