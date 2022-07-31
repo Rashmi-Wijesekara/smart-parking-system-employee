@@ -32,9 +32,10 @@ const PasswordReset3 = () => {
                     />
                     
                     <Button 
+                        to="/profile"
                         type="submit"
                         title="Reset Password"
-                        className="rounded-lg mt-4"
+                        className="rounded-lg mt-4 mx-2"
                     />
                 </form>
             </FormCard>

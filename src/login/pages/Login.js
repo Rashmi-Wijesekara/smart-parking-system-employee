@@ -42,7 +42,7 @@ const Login = () => {
                 <ImageArea src={LogImg} alt="Login Images" className="h-40 mx-auto" />
                 <h2 className="text-xl font-semibold mb-1 mt-5 font-main">Employee Login</h2>
                 <h4 className="font-semibold mb-4 font-main">Smart Parking System</h4>
-                <FormCard>
+                <FormCard className="rounded-lg mt-10 w-full">
                     <form>
                         <Input
                             id="email"
@@ -58,6 +58,7 @@ const Login = () => {
                         />
                         <p className="text-right text-dusty-gray text-xs mb-1 font-second text-ssx">forgot password?</p>
                         <Button 
+                            to="/dashboard"
                             type="submit"
                             title="Login"
                             className="rounded-lg"

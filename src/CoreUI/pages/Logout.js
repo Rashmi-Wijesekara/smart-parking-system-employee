@@ -17,10 +17,12 @@ const Logout = () => {
                 <div className="font-main text-sxm mb-6">Are you sure you want to log out ?</div>
                 <div className="flex flex-row gap-2">
                     <Button 
+                        to="/profile"
                         title="Cancel"
                         className="font-second rounded-lg"
                     />
                     <Button 
+                        to="/"
                         title="Log Out"
                         color="bg-apricot"
                         className="font-second rounded-lg"
