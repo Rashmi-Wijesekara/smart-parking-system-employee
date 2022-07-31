@@ -30,7 +30,7 @@ const Logout = () => {
                         title="Log Out"
                         color="bg-apricot"
                         className="font-second rounded-lg"
-                        onClick={auth.logout()}
+                        onClick={auth.logout}
                     />
                 </div>
                 </form>

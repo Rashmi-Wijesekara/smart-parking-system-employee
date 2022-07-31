@@ -33,7 +33,6 @@ const Login = () => {
     const loginHandler = event => {
         event.preventDefault();
         auth.login();
-        console.log(auth.isLoggedIn);
     }
 
     return (
