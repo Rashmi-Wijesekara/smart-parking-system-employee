@@ -18,7 +18,7 @@ import LogImg from "../../shared/images/Employee.png";
 const Login = () => {
 
     const auth = useContext(AuthContext);
-    const [isLoading, setIsLoading] = useState(true);
+    const [isLoading, setIsLoading] = useState(false);
 
     const [inputState, inputHandler] = useForm({
         userId: {
@@ -35,6 +35,7 @@ const Login = () => {
         event.preventDefault();
         
         try {
+            setIsLoading(true);
             const response = await fetch(`http://localhost:5000/api/employee/${inputState.inputs.userId.value}`, {
                 method: "GET",
                 headers: {
@@ -43,8 +44,6 @@ const Login = () => {
             });
 
             const responseData = await response.json();
-            console.log(responseData.data[0].password);
-            setIsLoading(false);
             if(responseData.status === "OK") {
                 if (inputState.inputs.password.value === responseData.data[0].password) {
                     await auth.loginDetailsChange(responseData.data[0].email, responseData.data[0].id, responseData.data[0].name, responseData.data[0].phoneNo, responseData.data[0].vehicleList);
@@ -58,6 +57,16 @@ const Login = () => {
         } catch (err) {
             console.log(err);
         }
+
+        setIsLoading(false);
+    }
+
+    if (isLoading) {
+        return (
+            <div>
+                <h1>Looding...</h1>
+            </div>
+        );
     }
 
     return (

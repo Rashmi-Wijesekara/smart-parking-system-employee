@@ -1,4 +1,4 @@
-import React, { useState, useCallback, useContext } from 'react';
+import React, { useState, useCallback } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from 'react-router-dom';
 
 import Login from './login/pages/Login';
@@ -6,6 +6,8 @@ import Dashboard from './CoreUI/pages/Dashboard';
 import MyProfile from './CoreUI/pages/MyProfile';
 import PersionalInfo from './CoreUI/pages/PersionalInfo';
 import Logout from './CoreUI/pages/Logout';
+import AddVehicle from './CoreUI/pages/AddVehicle';
+import RemoveVehicle from './CoreUI/pages/RemoveVehicle';
 import PasswordReset1 from './CoreUI/pages/PasswordReset1';
 import PasswordReset2 from './CoreUI/pages/PasswordReset2';
 import PasswordReset3 from './CoreUI/pages/PasswordReset3';
@@ -68,6 +70,12 @@ function App() {
           </Route>
           <Route path="/logout" exact>
               <Logout />
+          </Route>
+          <Route path="/addVehicle" exact>
+              <AddVehicle />
+          </Route>
+          <Route path="/removeVehicle" exact>
+              <RemoveVehicle />
           </Route>
           <Route path="/pwdReset1" exact>
               <PasswordReset1 />
