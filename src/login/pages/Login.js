@@ -2,14 +2,14 @@
     this is a login page
 */
 
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 import AppLogo from "../../shared/components/AppLogo";
 import FormCard from "../../shared/components/FormCard";
 import ImageArea from "../../shared/components/ImageArea";
 import Button from "../../shared/Form/Components/Button";
 import Input from "../../shared/Form/Components/Input";
-import { VALIDATOR_EMAIL, VALIDATOR_MINLENGTH } from "../../shared/util/validators";
+import { VALIDATOR_MINLENGTH, VALIDATOR_REQUIRE } from "../../shared/util/validators";
 import { useForm } from "../../shared/hooks/form-hook";
 import { AuthContext } from "../../shared/context/auth-context";
 
@@ -18,9 +18,10 @@ import LogImg from "../../shared/images/Employee.png";
 const Login = () => {
 
     const auth = useContext(AuthContext);
+    const [isLoading, setIsLoading] = useState(false);
 
     const [inputState, inputHandler] = useForm({
-        email: {
+        userId: {
             value: "",
             isValid: false
         },
@@ -30,9 +31,42 @@ const Login = () => {
         }
     }, false);
 
-    const loginHandler = event => {
+    const loginHandler = async event => {
         event.preventDefault();
-        auth.login();
+        
+        try {
+            setIsLoading(true);
+            const response = await fetch(`http://localhost:5000/api/employee/${inputState.inputs.userId.value}`, {
+                method: "GET",
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+
+            const responseData = await response.json();
+            if(responseData.status === "OK") {
+                if (inputState.inputs.password.value === responseData.data[0].password) {
+                    await auth.loginDetailsChange(responseData.data[0].email, responseData.data[0].id, responseData.data[0].name, responseData.data[0].phoneNo, responseData.data[0].vehicleList);
+                    auth.login();
+                } else {
+                    console.log("Wrong userName or password");
+                }
+            } else {
+                console.log("Error occoured");
+            }
+        } catch (err) {
+            console.log(err);
+        }
+
+        setIsLoading(false);
+    }
+
+    if (isLoading) {
+        return (
+            <div>
+                <h1>Looding...</h1>
+            </div>
+        );
     }
 
     return (
@@ -48,12 +82,12 @@ const Login = () => {
                 <FormCard className="rounded-lg mt-10 w-full">
                     <form onSubmit={loginHandler}>
                         <Input
-                            id="email"
-                            type="email" 
-                            displayName="Email address"
+                            id="userId"
+                            type="text" 
+                            displayName="User ID"
                             inputClass="rounded-lg"
-                            errorText="Pleace Enter Valid Email"
-                            validators={[VALIDATOR_EMAIL()]}
+                            errorText="Pleace Enter Valid UserName"
+                            validators={[VALIDATOR_REQUIRE()]}
                             onInput={inputHandler}
                         />
                         <Input
@@ -62,7 +96,7 @@ const Login = () => {
                             displayName="Password"
                             inputClass="rounded-lg"
                             errorText="Password should have at least 6 charactors"
-                            validators={[VALIDATOR_MINLENGTH(6)]}
+                            validators={[VALIDATOR_MINLENGTH(4)]}
                             onInput={inputHandler}
                         />
                         <p className="text-right text-dusty-gray text-xs mb-1 font-second text-ssx">forgot password?</p>

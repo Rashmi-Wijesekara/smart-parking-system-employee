@@ -1,13 +1,17 @@
-import React from "react";
+import React, {useContext} from "react";
 
 import Avatar from '@mui/material/Avatar';
 
 import PageWrapper from "../../shared/components/PageWrapper";
 import ButtonWithIcon from "../../shared/components/ButtonWithIcon";
+import { AuthContext } from "../../shared/context/auth-context";
 
 import DefaultProfileImg from "../../shared/images/default-avatar.jpg";
 
 const PersionalInfo = (props) => {
+
+    const auth = useContext(AuthContext);
+
     return (
         <PageWrapper
             wrapperClasses="flex flex-col pt-8"
@@ -15,16 +19,16 @@ const PersionalInfo = (props) => {
         >   
             <div className="w-full flex flex-col items-center mb-3">
                 <Avatar 
-                    alt={props.personName} 
+                    alt={auth.loginDetails.name} 
                     src={props.profileUrl || DefaultProfileImg} 
                     sx={{ width: 100, height: 100 }}
                 />
             </div>
             <div className="flex flex-col items-start pl-5 gap-y-2">
-                <div className="font-main font-semibold">Name: {props.name}</div>
-                <div className="font-main text-dove-gray">ID: {props.userID}</div>
-                <div className="font-main text-dove-gray">Email: {props.email}</div>
-                <div className="font-main text-dove-gray">Phone No: {props.phoneNum}</div>
+                <div className="font-main font-semibold">Name: {auth.loginDetails.name}</div>
+                <div className="font-main text-dove-gray">ID: {auth.loginDetails.id}</div>
+                <div className="font-main text-dove-gray">Email: {auth.loginDetails.email}</div>
+                <div className="font-main text-dove-gray">Phone No: {auth.loginDetails.phoneNo}</div>
                 <ButtonWithIcon
                     to="/pwdReset1"
                     size="w-fit"
