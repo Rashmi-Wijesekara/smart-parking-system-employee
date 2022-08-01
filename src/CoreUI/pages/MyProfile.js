@@ -1,16 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 
 import Avatar from '@mui/material/Avatar';
 
 import PageWrapper from "../../shared/components/PageWrapper";
 import IconBtn from "../../shared/components/IconBtn";
+import { AuthContext } from "../../shared/context/auth-context";
 
 import DefaultProfileImg from "../../shared/images/default-avatar.jpg";
 
 const MyProfile = (props) => {
 
-    const name = "kdjf kdjfddd";
-    const email = "djfdiddiif@gmail.com"
+    const auth = useContext(AuthContext);
 
     return (
         <PageWrapper 
@@ -19,13 +19,13 @@ const MyProfile = (props) => {
         >
             <div className="flex mb-8">
                 <Avatar 
-                    alt={props.personName} 
+                    alt={auth.loginDetails.id} 
                     src={props.profileUrl || DefaultProfileImg} 
                     sx={{ width: 70, height: 70 }}
                 />
                 <div className="text-left ml-3 flex flex-col justify-center">
-                    <div className="font-bold font-main">{name}</div>
-                    <div className="font-main">{email}</div>
+                    <div className="font-bold font-main">{auth.loginDetails.name}</div>
+                    <div className="font-main">{auth.loginDetails.email}</div>
                 </div>
             </div>
             <div>
