@@ -8,7 +8,7 @@ const Table = (props) => {
 	const titles = props.titles
 
 	return (
-		<table className="border-3 w-full overflow-y-auto z-100 h-[100px]">
+		<table className="border-3 w-full z-100 overflow-y-scroll h-40 table-fixed">
 			<thead>
 				<TableTitle titles={titles} />
 			</thead>

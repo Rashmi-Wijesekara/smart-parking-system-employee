@@ -13,7 +13,7 @@ const PageWrapper = (props) => {
         <div className="w-full h-full relative flex justify-center">
             <ContentRapper wrapperClasses={props.wrapperClasses}>
                 {props.children}
-                <AppLogo className="absolute bottom-2 right-1" height="h-6" />
+                <AppLogo className={`${props.isFloat ? "float-right" : "absolute"} bottom-2 right-1`} height="h-6" />
             </ContentRapper>
             <NavContainer selected={props.selected} />
         </div>
